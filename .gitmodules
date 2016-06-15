@@ -1,0 +1,6 @@
+[submodule "hangups"]
+	path = hangups
+	url = https://github.com/tdryer/hangups.git
+[submodule "discord"]
+	path = discord
+	url = https://github.com/Rapptz/discord.py.git
