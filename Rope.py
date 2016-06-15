@@ -19,12 +19,12 @@ consoleHandler = logging.StreamHandler()
 consoleHandler.setLevel(logging.DEBUG)
 consoleHandler.setFormatter(logFormatter)
 
-#fileHandler = logging.FileHandler("Rope.log")
-#fileHandler.setLevel(logging.DEBUG)
-#fileHandler.setFormatter(logFormatter)
+fileHandler = logging.FileHandler("Rope.log")
+fileHandler.setLevel(logging.DEBUG)
+fileHandler.setFormatter(logFormatter)
 
 logger.addHandler(consoleHandler)
-#logger.addHandler(fileHandler)
+logger.addHandler(fileHandler)
 
 #initialize discord client
 discordClient = discord.Client()
@@ -67,7 +67,7 @@ async def on_message(message):
         await discordClient.close()
 
     else:
-        await discordClient.change_nickname(discord.utils.get(message.server.members, name=discordClient.user.name), "[Hangouts: {0}] {1}".format("CHAT NAME", message.author.display_name))
+        await discordClient.change_nickname(discord.utils.get(message.server.members, name=discordClient.user.name), "[H][{0}] {1}".format("CHAT NAME", message.author.display_name))
         await discordClient.send_message(message.channel, message.content)
         await discordClient.change_nickname(discord.utils.get(message.server.members, name=discordClient.user.name), config.DISCORD_NICK)
 
